@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <title>Upload Apartment</title>
+        <link href="logo.jpg" rel="icon">
+        <link href="r&s.css" rel="stylesheet">
+        <!-- FontAwesome CSS link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+        
+    </head>
+    <body class="upload-body">
+        <div class="content">
+            <div id="abc">
+                <nav>
+                    <ul>
+                        <li><a href="Homepage.html">Home</a></li>
+                        <li><a href="#">Notifications</a></li>
+                        <li><a href="Upload.html">Upload</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="Login.html">Login/Sign-up</a></li>
+                    </ul>
+                </nav>
+            </div> 
+                
+            <form action="" method="get" class="upload-form">
+                <div class="apart-name">    
+                    <input type="text" name="name" id="name" placeholder="Apartment name" />
+                </div>
+                <div class="city-capacity">
+                    <div class="city">
+                        <input type="text" name="city" id="city" required placeholder="City"/>
+                    </div>
+                    <div class="capacity">                    
+                        <input type="text" name="capacity" id="capacity" required placeholder="Capacity"/>
+                    </div>
+                </div>
+                <div class="address-price">
+                    <div class="address">                       
+                        <input type="text" name="address" id="address" required placeholder="Address"/><br><br>
+                    </div>
+                    <div class="price"> 
+                        <input type="text" name="price" id="price" required placeholder="Price"/><br><br>
+                    </div>
+                </div>
+                <div class="availability">
+                    <div class="check-in">
+                        <label for="check-in">Available from</label>
+                        <input type="date" name="check-in" id="check-in"  min="2023-10-28"/><br><br>
+                    </div>
+                    <div class="check-out">
+                        <label for="check-out">Available until</label>
+                        <input type="date" name="check-out" id="check-out"  /><br><br>
+                    </div>
+                </div>
+                <div class="features">
+                    <label for="features">Features</label><br>
+                    <textarea name="features" id="features" required ></textarea> <br><br>
+                </div>           
+                <div class="form-photo">
+                    <label for="photos">Photos</label><br>
+                    <input type="file" name="photos" id="photos" multiple accept="image/*" /><br><br>
+                </div>    
+                <div class="reason">
+                    <label for="reason">Available for:</label>
+                    <input type="radio" name="reason" value="rent"> Rent
+                    <input type="radio" name="reason" value="swap"> Swap<br><br>
+                </div>
+            </form>            
+            <div class="upload-button">
+                <button>Upload</button>
+            </div> 
+        </div>  
+        
+        <div class="footer">
+            <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>     
+    </body>
+</html>
