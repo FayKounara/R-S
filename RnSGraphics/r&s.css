@@ -647,14 +647,17 @@ table th, table td {
 }
 
 
-/* Swap offer css */
+/*........................................................................................................................ Swap offer css */
 .SwapYourApartmenth1{
   text-align: center;
+  margin-top: 50px;
+  font-size: 25px;
 }
 
 .SwapYourApartmenth2{
   text-align: center;
-  font-size: 25px;
+  margin-top: 50px;
+  font-size: 20px;
 }
 
 .form-Swap-offer{
