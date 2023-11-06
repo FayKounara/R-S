@@ -150,6 +150,7 @@ button:hover{
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #fff;
 }
 
 table th, table td {
@@ -517,8 +518,6 @@ table th, table td {
   transform: translateY(-50%);
   text-align: right;
   color: #FFFFFF;
-  top: 36%; /* Adjust the top position to align with the heading FROM 65% */
-  right: 10%; /* Adjust the right position to move the button to the right */
 }
 
 .reservation_button{
@@ -543,6 +542,10 @@ table th, table td {
   box-shadow: inset 0 0 0 2px #ffffff;
   background-color:  rgb(255, 0, 128);
   height: 48px;
+  position: absolute;
+  top: 55%;
+  right: 10%;
+  transform: translateY(-50%);
 }
 
 .reservation_button :hover{
