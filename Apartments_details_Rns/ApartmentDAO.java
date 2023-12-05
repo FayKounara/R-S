@@ -14,13 +14,14 @@ public class ApartmentDAO {
 	 * @return List<User>
 	 */
 	public List<Apartment> getApartments() throws Exception {
+
+		List<Apartment> apertments = new ArrayList<Apartment>();
+		apartments.add(new Apartment(11, "Maria's apartment", "11/12/2023", "15/12/2023", "Paris","paris", 300, 1,"ok",true, false, 4));
 			
 	} 
 
 	
-	public Apartment findApartment(String user_id) throws Exception {
-		
-	}
+	
 
 	/**
 	 * This method is used to authenticate a user.
@@ -30,12 +31,20 @@ public class ApartmentDAO {
 	 * @return User, the User object
 	 * @throws Exception, if the credentials are not valid
 	 */
-	public Apartment authenticate(int apartment_id, String name, String available_from, String available_until, 
-                                String city, String address, float price, int capacity, String features, boolean up_rent,boolean up_swap, int user_id) throws Exception {
+	public Apartment authenticate( String city) throws Exception {  //when it works it need dates and capacity
 		
-			
-			
+		List<Apartment> aparts = getApartments();
+
+		for (Apartment apart: aparts) {
+							
+			if (apart.getCity().equals(city) ) {
+				return apart; 
+			}
+							
+		}
+									
+		throw new Exception("No results for this search");	
 		
 	} 
 
-} //End of class
+} 
