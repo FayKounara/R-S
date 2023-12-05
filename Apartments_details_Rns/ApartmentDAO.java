@@ -1,10 +1,8 @@
 package Apartments_details_Rns;
 
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import Apartments_details_Rns.Apartment;
 
 public class ApartmentDAO {
 		
@@ -15,8 +13,9 @@ public class ApartmentDAO {
 	 */
 	public List<Apartment> getApartments() throws Exception {
 
-		List<Apartment> apertments = new ArrayList<Apartment>();
+		List<Apartment> apartments = new ArrayList<Apartment>();
 		apartments.add(new Apartment(11, "Maria's apartment", "11/12/2023", "15/12/2023", "Paris","paris", 300, 1,"ok",true, false, 4));
+		return apartments;
 			
 	} 
 
@@ -36,14 +35,14 @@ public class ApartmentDAO {
 		List<Apartment> aparts = getApartments();
 
 		for (Apartment apart: aparts) {
-							
+	        //lista kanonika gia na ta krataei ola			
 			if (apart.getCity().equals(city) ) {
 				return apart; 
 			}
-							
+					
 		}
-									
-		throw new Exception("No results for this search");	
+		return null;							
+		
 		
 	} 
 

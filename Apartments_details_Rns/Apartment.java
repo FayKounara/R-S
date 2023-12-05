@@ -101,11 +101,11 @@ public class Apartment {
         this.capacity = capacity;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
