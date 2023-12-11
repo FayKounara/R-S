@@ -54,7 +54,7 @@ List<Apartment> receivedList = (List<Apartment>) session.getAttribute("apartment
                                         <img src="house-image.jpg">
                                     </div>
                                     <div class="house-info">
-                                        <p>Apartment in Paris with ID : <%=apart1.getApartmentId() %></p>
+                                        <p>Apartment in <%=(String)session.getAttribute("destname")%> with ID : <%=apart1.getApartmentId() %></p>
                                         <h3><%=apart1.getName() %></h3>
                                         <p><%=apart1.getFeatures() %></p>
                                         <div class="house-price">
