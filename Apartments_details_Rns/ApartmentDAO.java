@@ -2,6 +2,7 @@ package Apartments_details_Rns;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.*;
 
 
 public class ApartmentDAO {
@@ -14,10 +15,43 @@ public class ApartmentDAO {
 	public List<Apartment> getApartments() throws Exception {
 
 		List<Apartment> apartments = new ArrayList<Apartment>();
-		apartments.add(new Apartment(11, "Maria's apartment", "11/12/2023", "15/12/2023", "Paris","paris", 300, 1,"ok",true, false, 4));
-		apartments.add(new Apartment(12, "Deluxe Apartment", "11/12/2023", "15/12/2023", "Paris","paris", 300, 1,"ok",true, false, 5));
-		apartments.add(new Apartment(13, "Best hotel", "11/12/2023", "15/12/2023", "Athens","paris", 300, 1,"ok",true, false, 6));
-		return apartments;
+		DB db = new DB();
+        Connection con = null;
+        String query = "SELECT * FROM apartment;";
+
+        try {
+
+            con = db.getConnection();
+
+            PreparedStatement stmt = con.prepareStatement(query);
+            
+            
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+
+                apartments.add( new Apartment(rs.getInt("apartment_id"), rs.getString("name"), rs.getString("available_from"), rs.getString("available_until"), rs.getString("city"), rs.getString("address"),
+				        rs.getFloat("price"), rs.getInt("capacity"), rs.getString("features"), rs.getBoolean("up_rent"), rs.getBoolean("up_swap"),rs.getInt("user_id")));
+
+            }
+
+            rs.close();
+            stmt.close();
+            db.close();
+
+            return apartments;
+
+            
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        } finally {
+            try {
+                db.close();    
+            } catch (Exception e) {
+                
+            }
+            
+        }
 			
 	} 
 
@@ -29,7 +63,7 @@ public class ApartmentDAO {
 	 * @return User, the User object
 	 * @throws Exception, if the credentials are not valid
 	 */
-	public Apartment authenticate( String city,int cap) throws Exception {  //when it works it need dates and capacity
+	public List<Apartment> authenticate( String city,int cap) throws Exception {  //when it works it need dates and capacity
 		
 		List<Apartment> aparts = getApartments();
 		List<Apartment> available_apartments = new ArrayList<Apartment>();
@@ -40,6 +74,7 @@ public class ApartmentDAO {
 				available_apartments.add(apart); 
 			}				
 		}
+
 		return available_apartments;							
 		
 		
