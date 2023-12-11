@@ -4,13 +4,7 @@
 
 <%
 
-/*
-* Check if the attribute (with name "userObj2023") exists in the session.
-* If attribute does not exist in the session then the user is not authenticated.  
-*/
-ApartmentDAO ap3= new ApartmentDAO();
-List<Apartment> receivedList= ap3.getApartments();
-//List<Apartment> receivedList = (List<Apartment>) request.getAttribute("apartmentList");
+List<Apartment> receivedList = (List<Apartment>) session.getAttribute("apartmentList");
 %>
 
 
@@ -50,8 +44,9 @@ List<Apartment> receivedList= ap3.getApartments();
                     <p>200+Options</p>
                     <% if(request.getAttribute("message") != null) { %>		
                         <%=(String)request.getAttribute("message") %>
-                    <% } %>
-                    <h1>Recommended Places In </h1>
+                    <% } 
+                    %>  
+                    <h1>Recommended Places In <%=(String)session.getAttribute("destname")%></h1>
                     
 							<% for (Apartment apart1: receivedList) { %>
                                 <div class="house">

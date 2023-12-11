@@ -49,7 +49,7 @@
         
         <div class="container">
             
-            <form class="search-box" method="post" action="try1.jsp">
+            <form class="search-box" method="post" action="HomepageController.jsp">
                 <br><br><br><br>
                 <br><br><br><br>
                 <table>
