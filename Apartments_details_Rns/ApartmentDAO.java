@@ -64,20 +64,45 @@ public class ApartmentDAO {
 	 * @throws Exception, if the credentials are not valid
 	 */
 	public List<Apartment> authenticate( String city,int cap) throws Exception {  //when it works it need dates and capacity
-		
-		List<Apartment> aparts = getApartments();
 		List<Apartment> available_apartments = new ArrayList<Apartment>();
+		DB db = new DB();
+        Connection con = null;
+        String query = "SELECT * FROM apartment WHERE city=? AND capacity=?;";
 
-		for (Apartment apart: aparts) {
-	        //lista kanonika gia na ta krataei ola			
-			if (apart.getCity().equals(city) && apart.getCapacity()==cap ) {
-				available_apartments.add(apart); 
-			}				
-		}
+        try {
 
-		return available_apartments;							
-		
-		
+            con = db.getConnection();
+
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1,city);
+			stmt.setInt(2,cap);
+            
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+
+                available_apartments.add( new Apartment(rs.getInt("apartment_id"), rs.getString("name"), rs.getString("available_from"), rs.getString("available_until"), rs.getString("city"), rs.getString("address"),
+				        rs.getFloat("price"), rs.getInt("capacity"), rs.getString("features"), rs.getBoolean("up_rent"), rs.getBoolean("up_swap"),rs.getInt("user_id")));
+
+            }
+
+            rs.close();
+            stmt.close();
+            db.close();
+
+            return available_apartments;
+
+            
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        } finally {
+            try {
+                db.close();    
+            } catch (Exception e) {
+                
+            }
+            
+        }								
 	} 
 
-} 
+}
