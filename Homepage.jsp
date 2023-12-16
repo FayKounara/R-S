@@ -4,7 +4,6 @@
 <%@ page import="exercise2_2023_2024_8210028.*,java.util.List" %>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +29,7 @@
                     <li><a href="#">Notifications</a></li>
                     <li><a href="Upload.jsp">Upload</a></li>
                     <li><a href="#">Profile</a></li>
-                    <li><a href="Login.html">Login/Sign-up</a></li>
+                    <li><a href="Login.jsp">Login/Sign-up</a></li>
                 </ul>
             </nav>
         </div>
