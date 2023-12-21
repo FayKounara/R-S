@@ -127,7 +127,7 @@ public class Apartment {
     public boolean getUpSwap() {
         return up_swap;
     }
-    public void setUpRent(int user_id) {
+    public void setUserId(int user_id) {
         this.user_id = user_id;
     }
     public int getUserId() {

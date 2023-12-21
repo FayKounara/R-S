@@ -20,8 +20,7 @@ public class User {
      * 
      *
      */
-    public User(int user_id, String firstname,String username, String password, int phone) {        
-        this.user_id=user_id;
+    public User(String firstname,String username, String password, int phone) {        
         this.firstname = firstname;
         this.username=username;
         this.password=password;

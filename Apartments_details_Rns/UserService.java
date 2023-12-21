@@ -5,43 +5,8 @@ import  java.sql.*;
 
 public class UserService {
 
-    public List<User> showUsers() throws Exception {
-        DB db = new DB();
-        Connection con = null;
-        String query = "SELECT * FROM user;";
-
-        try {
-            con = db.getConnection();
-            PreparedStatement stmt = con.prepareStatement(query);
-            ResultSet rs = stmt.executeQuery();
-
-            List<User> userList = new ArrayList<>();
-
-            while (rs.next()) {
-                User user = new User(rs.getInt("user_id"), rs.getString("name"), rs.getString("username"),rs.getString("password"), rs.getInt("phone"));
-                userList.add(user);
-            }
-
-            rs.close();
-            stmt.close();
-            db.close();
-
-            return userList;
-
-        } catch (Exception e) {
-            throw new Exception("Error fetching users: " + e.getMessage());
-        } finally {
-            try {
-                db.close();
-            } catch (Exception e) {
-                e.getMessage();
-            }
-        }
-    }
-
     public User authenticate(String username, String password) throws Exception {
     
-
         DB db = new DB();
         Connection con = null;
         String query = "SELECT * FROM user WHERE username=? AND password=?;";
@@ -66,11 +31,11 @@ public class UserService {
             }
 
             // case valid credentials
-            User user = new User(rs.getInt("user_id"),
-                        rs.getString("name"),
+            User user = new User(rs.getString("name"),
                         rs.getString("username"),
                         rs.getString("password"),
                         rs.getInt("phone"));
+            user.setId(rs.getInt("user_id"));
             
             rs.close();
             stmt.close();
@@ -95,7 +60,7 @@ public class UserService {
 		DB db = new DB();
         Connection con = null;
         String query = "SELECT * FROM user WHERE username=?;";
-        String query1= "INSERT INTO user (user_id, name, username, password, phone) VALUES (?, ?, ?, ?, ?);";
+        String query1= "INSERT INTO user (name, username, password, phone) VALUES (?, ?, ?, ?);";
 
         try {
             
@@ -105,16 +70,15 @@ public class UserService {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                throw new Exception("Sorry, username already registered");
+                throw new Exception("Sorry, username already registered!");
             }
     
 			
             PreparedStatement stmt1 = con.prepareStatement(query1);
-            stmt1.setInt(1, user.getId());
-            stmt1.setString(2, user.getFirstname());
-            stmt1.setString(3, user.getUsername());
-			stmt1.setString(4, user.getPassword());
-            stmt1.setInt(5, user.getPhone());
+            stmt1.setString(1, user.getFirstname());
+            stmt1.setString(2, user.getUsername());
+			stmt1.setString(3, user.getPassword());
+            stmt1.setInt(4, user.getPhone());
 
             stmt1.executeUpdate();
             rs.close();
@@ -127,11 +91,11 @@ public class UserService {
             try {
                 db.close();
             } catch (SQLException e) {
-                e.printStackTrace(); // Handle or log the exception accordingly
+                e.printStackTrace();
             }
         }
 		
 		
-	}//end of register
+	}
 
 }
