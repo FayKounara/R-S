@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page errorPage="error.jsp" %>
 <%@ page import="Apartments_details_Rns.*" %>
 
 <%
@@ -10,16 +9,33 @@
 
 
 try{
+    
     int phone1 = Integer.parseInt(phone);
-    User us1= new User(phone1, name, username, password, phone1);
+    request.setAttribute("error_signup", "Please enter a valid phone number");
+    User us1= new User(name, username, password, phone1);
     UserService uService= new UserService();
     uService.register(us1);
-    response.sendRedirect("Homepage.jsp");
+    request.setAttribute("success_signup", "You signed up successfully");
+    %>
+        <jsp:forward page="Homepage.jsp" />
+    
+    <%
+} catch (NumberFormatException e) {
+    
+    request.setAttribute("error_signup", "Please enter a valid phone number!");
+    %>
+        <jsp:forward page="SignUp.jsp" />
+    
+    <%
 }  catch(Exception e) {  
-    response.sendRedirect("SignUp.jsp");
-}
+    request.setAttribute("error_signup", (String)e.getMessage());
 
-%>
+    %>
+        <jsp:forward page="SignUp.jsp" />
+    
+    <%
+    }
+    %>
 
 
 

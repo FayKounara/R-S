@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-lg-12">
         <%
-        ArrayList<String> errors = (ArrayList<String>) session.getAttribute("error");
+        ArrayList<String> errors = (ArrayList<String>) request.getAttribute("error");
         if (errors != null && errors.size() > 0) {
         %>
         <div class="alert alert-danger custom-alert" role="alert">
@@ -37,7 +37,7 @@
             </center>
         <%
             }
-        }else{
+        }else if (errors != null && errors.size() <= 0) {
         %>
         <div class="alert-container">
             <div class="row">
@@ -47,6 +47,7 @@
         </div>
                 </div>
             </div>
+        
         <%
     }
     %>
@@ -329,7 +330,6 @@
                     
                     type="text"
                     name="phone"
-                    required
                     value=""
                     size="20"
                     

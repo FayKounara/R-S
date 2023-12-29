@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@ page import="vscode_ismgroup62.exercise2_2023_2024_8210028.*" %>
-<%@ page import="exercise2_2023_2024_8210028.*,java.util.List" %>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,17 +30,23 @@
             </nav>
         </div>
 
-
-        <% if(request.getAttribute("message") != null) { %>		
-            <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("message") %></div>
-        <% } %>
+        <div class="errorMessage-Homepage">
+            <% if(request.getAttribute("message") != null) { %>		
+                <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("message") %></div>
+            <% } %>
+            <% if(request.getAttribute("error") != null) { %>		
+                <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("error") %></div>
+            <% } %>
+            <% if(request.getAttribute("success_login") != null) { %>		
+                <div class="alert1 alert-success text-center" role="alert"><%=(String)request.getAttribute("success_login") %></div>
+            <% } %>
+            <% if(request.getAttribute("success_signup") != null) { %>		
+                <div class="alert1 alert-success text-center" role="alert"><%=(String)request.getAttribute("success_signup") %></div>
+            <% } %>
+        </div>
 
         
         <h1 class="h1content">Make the World your next home!</h1>
-        
-       
-
-
         
         <div class="container">
             
@@ -84,11 +86,11 @@
                 <br><br>
                 <div class="buttons">
                     
-                        <button type="button, submit">RENT</button>
+                        <button type="submit" name="buttonrs"  value="RENT">RENT</button>
                     
                      &nbsp; or &nbsp;
                      
-                        <button type="button, submit">SWAP</button>
+                        <button type="submit" name="buttonrs"  value="SWAP">SWAP</button>
                     
                 </div>
     

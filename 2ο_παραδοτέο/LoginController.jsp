@@ -4,19 +4,19 @@
 <%
 String username = request.getParameter("username");
 String password = request.getParameter("password");
-String path=  request.getParameter("previousURL");
 UserService uService = new UserService();
 
 try {
 
     User user = uService.authenticate(username, password);
     session.setAttribute("authenticated_user", user);
+    request.setAttribute("success_login", "You logged in successfully!");
+
+%>
+    <jsp:forward page="Homepage.jsp" />
+
+<%
     
-    if (path !=null) {
-        response.sendRedirect(path);
-    } else {
-        response.sendRedirect("Homepage.jsp");
-    }
 } catch(Exception e) {
 
     request.setAttribute("error_login", "Wrong username or password!");

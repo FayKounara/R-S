@@ -177,6 +177,39 @@ table th, table td {
     pointer-events: none;
 }
 
+.errorMessage-Homepage {
+    margin-top: 24px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.alert1 {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color:  white;
+    font-weight: bold;
+    font-size: 22px;
+}
 
 /*..................................................................................................................Search Results*/
 .list-container{
@@ -972,7 +1005,7 @@ input#phone {
     left: 80%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-} 
+}  
 /*--------------------------------------------------------------------------------------------------Sign Up-----------*/
 .sign-button button {
     color: #FFFFFF;
@@ -1038,4 +1071,13 @@ input#phone {
     transform: translate(-50%, -50%); 
     font-family: Verdana;
     
+}
+.signup-wrong {
+    color: white;
+    position: absolute;
+    top: 24%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    font-family: Verdana;
 }

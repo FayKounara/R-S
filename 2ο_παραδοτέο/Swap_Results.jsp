@@ -1,11 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<%@ page import="Apartments_details_Rns.*,java.util.List" %>
-
-<%
-List<Apartment> receivedList = (List<Apartment>) session.getAttribute("apartmentList");
-%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,41 +26,85 @@ List<Apartment> receivedList = (List<Apartment>) session.getAttribute("apartment
                     </ul>
                 </nav>
             </div>
-
-
     
             <div class="list-container">
                 <div class="left-col">
                     <p>200+Options</p>
-                    <% if(request.getAttribute("message") != null) { %>		
-                        <%=(String)request.getAttribute("message") %>
-                    <% } 
-                    %>  
-                    <h1>Recommended Places In <%=(String)session.getAttribute("destname")%></h1>
-                    
-							<% for (Apartment apart1: receivedList) { %>
-                                <div class="house">
-                                    <div class="house-img">
-                                        <img src="house-image.jpg">
-                                    </div>
-                                    <div class="house-info">
-                                        <p>Apartment in <%=(String)session.getAttribute("destname")%> with ID : <%=apart1.getApartmentId() %></p>
-                                        <h3><%=apart1.getName() %></h3>
-                                        <p><%=apart1.getFeatures() %></p>
-                                        <div class="house-price">
-                                            <p><%=apart1.getCapacity() %> Guests</p>
-                                            <h4>$ <%=apart1.getPrice() %><span>/ day</span></h4>
-                                            <a href="ApartmentDetails.jsp">
-                                                <button type="button"><%=(String)session.getAttribute("button1") %></button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                              
-							<% } %>
-		
+                    <h1>Recommended Places In San Francisco</h1>
+                    <div class="house">
+                        <div class="house-img">
+                            <img src="house-image.jpg">
+                        </div>
+                        <div class="house-info">
+                            <p>Private Villa in San Francisco</p>
+                            <h3>Deluxe Queen Room with Sea View</h3>
+                            <p>1 Bedroom/ 1 bathroom /kitchen and wifi</p>
+                            <div class="house-price">
+                                <p>2 Guests</p>
+                                <h4>$ 100 <span>/ day</span></h4>
+                                <a href="swap_offer.jsp">
+                                    <button type="button">SWAP</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="house">
+                        <div class="house-img">
+                            <img src="house-image.jpg">
+                        </div>
+                        <div class="house-info">
+                            <p>Private Villa in San Francisco</p>
+                            <h3>Deluxe Queen Room with Sea View</h3>
+                            <p>1 Bedroom/ 1 bathroom /kitchen and wifi</p>
+                            <div class="house-price">
+                                <p>2 Guests</p>
+                                <h4>$ 100 <span>/ day</span></h4>
+                                <a href="swap_offer.jsp">
+                                    <button type="button">SWAP</button>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="house">
+                        <div class="house-img">
+                            <img src="house-image.jpg">
+                        </div>
+                        <div class="house-info">
+                            <p>Private Villa in San Francisco</p>
+                            <h3>Deluxe Queen Room with Sea View</h3>
+                            <p>1 Bedroom/ 1 bathroom /kitchen and wifi</p>
+                            <div class="house-price">
+                                <p>2 Guests</p>
+                                <h4>$ 100 <span>/ day</span></h4>
+                                <a href="swap_offer.jsp">
+                                    <button type="button">SWAP</button>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="house">
+                        <div class="house-img">
+                            <img src="house-image.jpg">
+                        </div>
+                        <div class="house-info">
+                            <p>Private Villa in San Francisco</p>
+                            <h3>Deluxe Queen Room with Sea View</h3>
+                            <p>1 Bedroom/ 1 bathroom /kitchen and wifi</p>
+                            <div class="house-price">
+                                <p>2 Guests</p>
+                                <h4>$ 100 <span>/ day</span></h4>
+                                    <a href="swap_offer.jsp">
+                                        <button type="button">SWAP</button>
+                                    </a>
+                            </div>
+                        
+                            
+                        </div>
+                    </div>
+    
                 </div> 
-
                 <div class="right-col">
                     <div class="sidebar">
                         <h2> Select Filters</h2>

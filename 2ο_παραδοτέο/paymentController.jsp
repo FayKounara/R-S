@@ -48,7 +48,7 @@ if (phone == null || phone.length() == 0) {
 	errors++;
 	list.add("Please fill in your phone number");
 }
-session.setAttribute("error",list);
+request.setAttribute("error",list);
 %>
 <jsp:forward page="payment.jsp" />
 							
