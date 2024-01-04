@@ -46,25 +46,36 @@ List<Apartment> receivedList = (List<Apartment>) session.getAttribute("apartment
                     <h1>Recommended Places In <%=(String)session.getAttribute("destname")%></h1>
                     
 							<% for (Apartment apart1: receivedList) { %>
-                                <div class="house">
-                                    <div class="house-img">
-                                        <img src="house-image.jpg">
-                                    </div>
-                                    <div class="house-info">
-                                        <p>Apartment in <%=(String)session.getAttribute("destname")%> with ID : <%=apart1.getApartmentId() %></p>
-                                        <h3><%=apart1.getName() %></h3>
-                                        <p><%=apart1.getFeatures() %></p>
-                                        <div class="house-price">
-                                            <p><%=apart1.getCapacity() %> Guests</p>
-                                            <% if (session.getAttribute("button1")=="RENT") { %>
-                                            <h4>$ <%=apart1.getPrice() %><span>/ day</span></h4>
-                                           <% }  %>
-                                            <a href="ApartmentDetails.jsp">
-                                                <button type="button"><%=(String)session.getAttribute("button1") %></button>
-                                            </a>
+                                <form action="ApartmentDetails.jsp"" method="post">
+                                    <input type="hidden" name="apartmentId" value="<%=apart1.getApartmentId()%>">
+                                    <input type="hidden" name="name" value="<%=apart1.getName()%>">
+                                    <input type="hidden" name="features" value="<%=apart1.getFeatures()%>">
+                                    <input type="hidden" name="capacity" value="<%=apart1.getCapacity()%>">
+                                    <input type="hidden" name="from" value="<%=apart1.getAvailableFrom()%>">
+                                    <input type="hidden" name="until" value="<%=apart1.getAvailableUntil()%>">
+                                    <input type="hidden" name="city" value="<%=apart1.getCity()%>">
+                                    <input type="hidden" name="address" value="<%=apart1.getAddress()%>">
+    
+                                    <div class="house">
+                                        <div class="house-img">
+                                            <img src="house-image.jpg">
+                                        </div>
+                                        <div class="house-info">
+                                            <p>Apartment in <%=(String)session.getAttribute("destname")%> with ID : <%=apart1.getApartmentId() %></p>
+                                            <h3><%=apart1.getName() %></h3>
+                                            <p><%=apart1.getFeatures() %></p>
+                                            <div class="house-price">
+                                                <p><%=apart1.getCapacity() %> Guests</p>
+                                                    <% if (session.getAttribute("button1")=="RENT") { %>
+                                                     <h4>$ <%=apart1.getPrice() %><span>/ day</span></h4>
+                                                    <% }  %>
+                                                <a href="apartment_final.jsp">
+                                                    <button type="submit"><%=(String)session.getAttribute("button1") %></button>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                               
 							<% } %>
 		
