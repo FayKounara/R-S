@@ -25,49 +25,53 @@
                 <li><a href="#">Login/Sign-up</a></li>
             </ul>
         </nav>
-    </div>
+      </div>
     <% if (session.getAttribute("authenticated_user")!=null){
       User user = (User) session.getAttribute("authenticated_user");
       int user_id=user.getId();
       Swap obj=new Swap();
       List<String>apartments=obj.getSwapApartments(user_id);
       %>
+      
       <form class="swap" method="post" action="swap_offerController.jsp">
-      <h1 class="SwapYourApartmenth1">Swap your apartment</h1>
-        <label for="swap">Please choose the apartment that you want to swap:</label>
+      
+        <div class="Apartment-details">
+          <div class="Details-container">
+              <div class="Apartment-name">
+                <p class="Name">Time to Swap your apartment!</p>
+              </div>
+                <p >Choose an apartment you have uploaded to offer for the exchange:</p>
 
-        <!-- The select element creates the dropdown -->
-        <select id="swap" name="swap" onchange="displaySelectedValue()">
-        <option value="">--- Your apartments ---</option>
-        <% for (String opt: apartments) { %>
-          <!-- Each option element defines an item in the dropdown -->
-          <option value="<%= opt %>"><%= opt %></option>
-        <% } %>
-      </select>
-      <div class="checkbox-containerSwap">
-        <input type="checkbox" id="terms" name="terms" />
-        <label for="terms">I agree to the terms of privacy</label>
-      </div>
-      <br />
-      <div>
-        <button type="submit" class="Submit_button">Submit offer</button>
+              <!-- The select element creates the dropdown -->
+               <select id="swap" name="swap" onchange="displaySelectedValue()">
+                  <option value="">--- Your apartments ---</option>
+                  <% for (String opt: apartments) { %>
+                  <!-- Each option element defines an item in the dropdown -->
+                  <option value="<%= opt %>"><%= opt %></option>
+                  <% } %>
+                </select>
+                <br />
+                <br />
+      
+                <div class="checkbox-containerSwap">
+                  <input type="checkbox" id="terms" name="terms" />
+                  <label for="terms">I agree to the terms of privacy</label>
+                </div>
 
-      </div>
-    </div>
-  </form>
+                <br />
 
-</div>
-</div>
-    </form>
+                <div>
+                  <button type="submit" class="Submit_button">Submit offer</button>
+                </div>
+          </div> 
+        </div>       
+      </form>
 
+               
   <!-- The select element creates the dropdown -->
   
-  <%
-}else{
-%>
-<h2>Please login before you try to swap!</h2>
-<% }
-%>
+  <% } else { %>
+    <h2>Please login before you try to swap!</h2>
+  <% } %>
   </body>
 </html>
-
