@@ -70,9 +70,9 @@
                     <input type="radio" name="reason1" value="rent"> Rent
                     <input type="radio" name="reason2" value="swap"> Swap<br><br>
                 </div>    
-            </div>  
+             
             
-                    <div class="button-new">
+                <div class="button-new">
                     <button>Upload</button>
                 </div>
                     
