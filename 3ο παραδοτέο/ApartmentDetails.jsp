@@ -1,5 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+
+
+<%String apartmentId = request.getParameter("apartmentId");
+String name = request.getParameter("name");
+String features = request.getParameter("features");
+String capacity = request.getParameter("capacity");
+String price = request.getParameter("price");
+String from = request.getParameter("from");
+String until = request.getParameter("until");
+String address = request.getParameter("address");
+String city = request.getParameter("city");%>
+
 <html lang="en">
   <head>
     <title>R&S | Swap</title>
@@ -26,31 +38,42 @@
       <div class="Apartment-details">
         <div class="Details-container">
           <div class="Apartment-name">
-            <p class="Name">Maria's apartment</p>
+            <p class="Name"><%=name%></p>
           </div>
           <ul class="Details-list">
             <div class="Code">
-              <p><strong>Code:</strong> <span>tzq2345</span></p>
+              <p><strong>Code:</strong> <span><%=apartmentId%></span></p>
             </div>
             <li>
-              <strong>Availabily:</strong> <span>12/5/2024-24/5/2024</span>
+              <strong>Availabily:</strong> <span>from <%=from%> until <%=until%></span>
             </li>
-            <li><strong>Guest capacity:</strong> <span>4 people</span></li>
-            <li><strong>City:</strong> <span>Athens</span></li>
-            <li><strong>Address:</strong> <span>Vasili Logothetidi 15, Athina 115 24</span></li>
-            <li><strong>Features:</strong> <span>Amazing 2 bedroom apartment, with 1 bathroom and a balcony facing. Close to many restaurants and bars. Has hardwood floors, central air and heat. Is pet-friendly.</span></li>
+            <li><strong>Guest capacity:</strong> <span><%=capacity%></span></li>
+            <li><strong>City:</strong> <span><%=city%></span></li>
+            <li><strong>Address:</strong> <span><%=address%></span></li>
+            <li><strong>Features:</strong> <span><%=features%></span></li>
             <li><strong>Contact the owner:</strong> <span> +30 6989015077<span></li>
           </ul>
         </div>
       </div>
-  
+      <% if (session.getAttribute("button1")=="RENT"){
+        %>
       <div>
         <a href="payment.jsp">
           <button type="button" class="reservation_button">Booking</button>
         </a>
         
       </div>
-  
+      <% } else if (session.getAttribute("button1")=="SWAP"){
+      %>  
+      <div>
+        <a href="swap_offer.jsp">
+          <button type="button" class="reservation_button">Booking</button>
+        </a>
+        
+      </div>
+      <%
+    }
+    %>
       <div class="image-container">
         <div class="image-wrapper">
           <img src="apartment_photo.webp" alt="Bedroom" />
