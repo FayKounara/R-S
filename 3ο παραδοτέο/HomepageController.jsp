@@ -38,6 +38,8 @@ if (but != null && but.equals("RENT")) {
          if (!receivedList.isEmpty()) {
             session.setAttribute("apartmentList", receivedList);
             session.setAttribute("destname", destination);
+            session.setAttribute("checkin", datecheckin);
+            session.setAttribute("checkout", datecheckout);
          %>
             <jsp:forward page="SearchResults.jsp" />
          <%
