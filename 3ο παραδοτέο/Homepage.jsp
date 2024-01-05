@@ -22,7 +22,7 @@
                 <!--img src="RnS.jpg"-->
                 <ul>
                     <li><a href="Homepage.jsp">Home</a></li>
-                    <li><a href="#">Notifications</a></li>
+                    <li><a href="profile.jsp">Notifications</a></li>
                     <li><a href="Upload.jsp">Upload</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="Login.jsp">Login/Sign-up</a></li>
@@ -55,7 +55,10 @@
                 <br><br><br><br>
                 <table>
                     <tr>
-                        <td><input type="text" name="search-box" placeholder="Where to go?"required></td>
+                        <td class="custom-date-input">
+                            <label for="checkin">City</label>
+                            <input type="text" name="search-box" placeholder="Where to go?"required>
+                        </td>
                        
                         <td class="custom-date-input">
                             <label for="checkin">Check-in</label>
@@ -65,7 +68,8 @@
                             <label for="checkout">Check-out</label>
                             <input type="date" name="checkout" id="checkin"required>
                         </td>
-                        <td>
+                        <td class="custom-date-input">
+                            <label for="checkout">Guests</label>
                             <select name="passengers"required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
