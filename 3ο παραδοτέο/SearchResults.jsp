@@ -4,6 +4,10 @@
 
 <%
 List<Apartment> receivedList = (List<Apartment>) session.getAttribute("apartmentList");
+String datecheckin = request.getParameter("checkin");
+String datecheckout = request.getParameter("checkout");
+session.setAttribute("checkin", datecheckin);
+session.setAttribute("checkout", datecheckout);
 %>
 
 <!DOCTYPE html>
