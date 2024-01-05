@@ -44,14 +44,12 @@ String city = request.getParameter("city");%>
             <div class="Code">
               <p><strong>Code:</strong> <span><%=apartmentId%></span></p>
             </div>
-            <li>
-              <strong>Availabily:</strong> <span>from <%=from%> until <%=until%></span>
-            </li>
-            <li><strong>Guest capacity:</strong> <span><%=capacity%></span></li>
             <li><strong>City:</strong> <span><%=city%></span></li>
             <li><strong>Address:</strong> <span><%=address%></span></li>
             <li><strong>Features:</strong> <span><%=features%></span></li>
-            <li><strong>Contact the owner:</strong> <span> +30 6989015077<span></li>
+            <li><strong>Guest capacity:</strong> <span><%=capacity%></span></li>
+            <li><strong>Checkin:</strong> <span><%=(String)session.getAttribute("checkin")%></span></li>
+            <li><strong>Checkout:</strong> <span><%=(String)session.getAttribute("checkout")%></span></li>
           </ul>
         </div>
       </div>
