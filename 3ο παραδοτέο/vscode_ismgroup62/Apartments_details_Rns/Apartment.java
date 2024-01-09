@@ -17,8 +17,8 @@ public class Apartment {
 
     /**
      * Full constuctor
-     *   
-     * 
+     *
+     *
      *  @param apartment_id;
      *  @param  name;
 	 *  @param available_from;
@@ -31,12 +31,11 @@ public class Apartment {
      *  @param up_rent;
      *  @param up_swap;
      *  @param user_id;
-    
+
      */
-    public Apartment(int apartment_id, String name, String available_from, String available_until, 
-                String city, String address, float price, int capacity, String features, int up_rent,int up_swap, int user_id) {        
+    public Apartment(String name, String available_from, String available_until,
+                String city, String address, float price, int capacity, String features, int up_rent,int up_swap, int user_id) {
         this.name = name;
-        this.apartment_id = apartment_id;
         this.available_from= available_from;
         this.available_until = available_until;
         this.city = city;
