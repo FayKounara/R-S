@@ -14,7 +14,7 @@ public class ApartmentDAO{
 	 * @return User, the User object
 	 * @throws Exception, if the credentials are not valid
 	 */
-	public List<Apartment> searchApartments( String city,int cap, String available_from, String available_until, String choice) throws Exception {  //when it works it need dates and capacity
+	public List<Apartment> searchApartments(String city,int cap, String available_from, String available_until, String choice) throws Exception { 
        
         List<Apartment> available_apartments = new ArrayList<Apartment>();
 		DB db = new DB();
@@ -47,13 +47,19 @@ public class ApartmentDAO{
             while (rs.next()) {
                 if (choice=="rent") {
                     if (rs.getInt("up_rent")==1) {
-                        available_apartments.add( new Apartment(rs.getInt("apartment_id"), rs.getString("name"), rs.getString("available_from"), rs.getString("available_until"), rs.getString("city"), rs.getString("address"),
-				            rs.getFloat("price"), rs.getInt("capacity"), rs.getString("features"), rs.getInt("up_rent"), rs.getInt("up_swap"),rs.getInt("user_id")));
-                    }   
+                        Apartment apart=new Apartment( rs.getString("name"), rs.getString("available_from"), rs.getString("available_until"), rs.getString("city"), rs.getString("address"),
+				            rs.getFloat("price"), rs.getInt("capacity"), rs.getString("features"), rs.getInt("up_rent"), rs.getInt("up_swap"),rs.getInt("user_id"));
+                        apart.setApartmentId(rs.getInt("apartment_id"));
+                        available_apartments.add(apart);
+
+                    } 
+
                 } else if (choice=="swap") {
                     if (rs.getInt("up_swap")==1) {
-                        available_apartments.add( new Apartment(rs.getInt("apartment_id"), rs.getString("name"), rs.getString("available_from"), rs.getString("available_until"), rs.getString("city"), rs.getString("address"),
-				            rs.getFloat("price"), rs.getInt("capacity"), rs.getString("features"), rs.getInt("up_rent"), rs.getInt("up_swap"),rs.getInt("user_id")));
+                        Apartment apart=new Apartment(rs.getString("name"), rs.getString("available_from"), rs.getString("available_until"), rs.getString("city"), rs.getString("address"),
+				            rs.getFloat("price"), rs.getInt("capacity"), rs.getString("features"), rs.getInt("up_rent"), rs.getInt("up_swap"),rs.getInt("user_id"));
+                        apart.setApartmentId(rs.getInt("apartment_id"));
+                        available_apartments.add(apart);
                     }  
                 }
             }
