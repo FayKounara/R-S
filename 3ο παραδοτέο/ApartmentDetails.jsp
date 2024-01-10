@@ -12,6 +12,7 @@ String until = request.getParameter("until");
 String address = request.getParameter("address");
 String city = request.getParameter("city");%>
 
+
 <html lang="en">
   <head>
     <title>R&S | Swap</title>
@@ -116,6 +117,13 @@ String city = request.getParameter("city");%>
           <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
   </div>
+  <%  if (from!=null && until!=null) {
+    session.setAttribute("check_in", from);
+    session.setAttribute("check_out", until);
+    session.setAttribute("apartment_id", apartmentId);
+    
+  }  
+  %>
     
   </body>
   <script>

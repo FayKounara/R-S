@@ -48,11 +48,14 @@
         </div>
                 </div>
             </div>
-        
         <%
         try {
+            String checkin = (String)session.getAttribute("check_in");
+            String checkout = (String)session.getAttribute("check_out"); 
+            String apartmentId = (String)session.getAttribute("apartment_id");
+            int apartid=Integer.parseInt(apartmentId);
             Booking book = new Booking();
-            book.bookApartment("2023-12-18", "2023-12-19", 2, 5);
+            book.bookApartment(checkin, checkout, apartid, 3);
         } catch (Exception e) {
             
         }
