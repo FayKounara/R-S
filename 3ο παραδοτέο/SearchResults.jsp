@@ -26,14 +26,20 @@ session.setAttribute("checkout", datecheckout);
     <body>
         <div class="content">
             <div id="abc">
-                <nav>
-                    <!--img src="RnS.jpg"-->
+                <nav style="height: 100px;">
                     <ul>
                         <li><a href="Homepage.jsp">Home</a></li>
-                        <li><a href="#">Notifications</a></li>
+                        <li><a href="profile.jsp">Notifications</a></li>
                         <li><a href="Upload.jsp">Upload</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="Login.jsp">Login/Sign-up</a></li>
+                        <%if (session.getAttribute("authenticated_user")==null){%>
+                            <li><a href="Login.jsp">Login/Sign-up</a></li>
+                        <%}else{
+                            User usernav = (User) session.getAttribute("authenticated_user");
+                            String fname = usernav.getFirstname();%>
+                            <li><a href="#">Logged in as:<%=fname%></a></li>
+                            <li><a href="logout.jsp">Logout</a></li>
+                        <%}%>
+                        
                     </ul>
                 </nav>
             </div>
@@ -42,11 +48,12 @@ session.setAttribute("checkout", datecheckout);
     
             <div class="list-container">
                 <div class="left-col">
-                    <p>200+Options</p>
+                    
                     <% if(request.getAttribute("message") != null) { %>		
                         <%=(String)request.getAttribute("message") %>
                     <% } 
                     %>  
+                    <br><br>
                     <h1>Recommended Places In <%=(String)session.getAttribute("destname")%></h1>
                     
 							<% for (Apartment apart1: receivedList) { %>
@@ -59,10 +66,34 @@ session.setAttribute("checkout", datecheckout);
                                     <input type="hidden" name="until" value="<%=apart1.getAvailableUntil()%>">
                                     <input type="hidden" name="city" value="<%=apart1.getCity()%>">
                                     <input type="hidden" name="address" value="<%=apart1.getAddress()%>">
-    
+                                    <%session.setAttribute("swap_apartment",apart1);%>
                                     <div class="house">
                                         <div class="house-img">
-                                            <img src="house-image.jpg">
+                                            <%int apart2 = apart1.getApartmentId();
+                                            ApartmentDAO im=new ApartmentDAO();
+                                            List<Apartment> apartimages = im.AddImages(apart2);
+
+                                            if (apartimages!=null) {
+                                                if (!apartimages.isEmpty()) {
+                                                    String imageurl="";
+                                                    for (Apartment ap4:apartimages) {
+                                                        if (ap4.getPart()==1) {
+                                                            imageurl="";
+                                                        }
+                                                        imageurl+=ap4.getImageURL();
+                                                    }   
+                                                    %>
+                                                     <img src="<%=imageurl%>">
+                                                   <%
+                                                }  else  {
+                                                    %>
+                                                     <img src="nophoto.png">
+                                                <%
+                                                }
+                                            }
+                                            
+                                            %>
+                                            
                                         </div>
                                         <div class="house-info">
                                             <p>Apartment in <%=(String)session.getAttribute("destname")%> with ID : <%=apart1.getApartmentId() %></p>
@@ -137,7 +168,7 @@ session.setAttribute("checkout", datecheckout);
         </div>
 
         <div class="footer">
-            <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+            <p>&copy;2023 RnS Rent and Swap. All rights reserved.</p>
             <div class="social-icons">
                 <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
