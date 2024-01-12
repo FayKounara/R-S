@@ -58,14 +58,12 @@
                             </div>
                             
                         <%}else if (errors != null && errors.size() <= 0) {%>
-                            <div class="alert-container">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="alert alert-success" role="alert">
+                           
+                                
+                                        <div class="alert alert-danger custom-alert" role="alert">
                                             <center> Payment completed successfully. </center>
                                         </div>
-                                    </div>
-                                </div>
+                                    
                                      <% try {
                                         String checkin = (String)session.getAttribute("check_in");
                                         String checkout = (String)session.getAttribute("check_out"); 
@@ -74,7 +72,7 @@
                                         Booking book = new Booking();
                                         book.bookApartment(checkin, checkout, apartid, 3);
                                     } catch (Exception e) {}%>
-                            </div>
+                            
                         <%}%>
                             
     
