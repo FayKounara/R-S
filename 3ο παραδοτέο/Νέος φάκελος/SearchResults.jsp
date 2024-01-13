@@ -87,7 +87,7 @@ session.setAttribute("checkout", datecheckout);
                                                    <%
                                                 }  else  {
                                                     %>
-                                                     <img src="house-image.jpg">
+                                                     <img src="nophoto.png">
                                                 <%
                                                 }
                                             }

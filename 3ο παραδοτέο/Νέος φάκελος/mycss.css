@@ -1,8 +1,7 @@
-mycss.css
 body {
-    background-image: url("i4.jpg"); font-family:Verdana;
-} 
-
+    /*background-image: url("i5.png");*/ 
+    font-family:Verdana;
+}
 /* visited link */
 a:visited {  
     color: #FFFFFF; font-size: 3
@@ -16,7 +15,7 @@ a:hover {
 nav{
     width: 100%;
     height: 50px;
-    background-color: rgba(247, 247, 247, 0);
+    background-color: rgba(167,154,147,255);
     line-height: 50px;/* to bring our links to the centre.*/
 }
 
@@ -37,21 +36,18 @@ nav ul li a{
     color: #ffffff;
     padding: 30px;
 }
-.h1content{
-    width: 100%;
-    position: absolute;
-    top: 30%;
-    text-align: center;
-    color: #FFFFFF;}
 
 .buttons{
     width: 100%;
     position: absolute;
-    top: 85%;
+    top: 65%;
     transform: translateY(-50%);
     text-align: center;
     color: #FFFFFF;
+}
 
+.buttons a {
+    text-decoration: none;
 }
 
 button{
@@ -84,12 +80,60 @@ button:hover{
     box-shadow: inset 0 0 0 2px  rgb(255, 0, 128);
 }
 
+.content {
+    flex: 1; /* Allows the content to grow and push the footer to the bottom */   
+}
+.footer {
+    background-color: rgba(167,154,147,255);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+}
+.button-new {
+    text-align: center;
+    margin: right -50px;;
+}
+.footer .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none
+}
+
+/*.................................................................HOMEPAGE*/
+.h1{
+    color: #FFFFFF;
+}
+.homepage-body {
+    background-image: url("i4.jpg");
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    position: relative; /* Updated to relative */
+    width: 90%; /* Updated to a percentage value */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .search-box {
@@ -104,6 +148,7 @@ button:hover{
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #fff;
 }
 
 table th, table td {
@@ -125,4 +170,38 @@ table th, table td {
     color: #ffffff;
     font-size: 12px;
     pointer-events: none;
+}
+
+.errorMessage-Homepage {
+    margin-top: 24px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.alert1 {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color:  white;
+    font-weight: bold;
+    font-size: 22px;
 }

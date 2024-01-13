@@ -60,7 +60,7 @@
                 <br><br><br><br>
                 <h1 style="color: white;"><center>Make the World your next home!</center></h1>
                 <br>
-                <table>
+                <center><table>
                     <tr>
                         <td class="custom-date-input">
                             <label for="checkin">City</label>
@@ -91,7 +91,7 @@
                             </select>
                         </td>
                     </tr>
-                </table>
+                </table></center>
                 <br><br><br><br>
                 <br><br><br><br>
                 <br><br><br><br>

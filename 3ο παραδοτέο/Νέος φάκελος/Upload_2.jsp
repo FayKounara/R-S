@@ -1,8 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="Apartments_details_Rns.*" %>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="java.util.List"%>
-
 
 <!doctype html>
 <html>
@@ -23,25 +19,20 @@
                 <nav>
                     <ul>
                         <li><a href="Homepage.jsp">Home</a></li>
-                        <li><a href="profile.jsp">Notifications</a></li>
+                        <li><a href="#">Notifications</a></li>
                         <li><a href="Upload.jsp">Upload</a></li>
-                        <%if (session.getAttribute("authenticated_user")==null){%>
-                            <li><a href="Login.jsp">Login/Sign-up</a></li>
-                        <%}else{
-                            User usernav = (User) session.getAttribute("authenticated_user");
-                            String fname = usernav.getFirstname();%>
-                            <li><a href="#">Logged in as:<%=fname%></a></li>
-                            <li><a href="logout.jsp">Logout</a></li>
-                        <%}%>
-                        </ul>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="Login.jsp">Login/Sign-up</a></li>
+                    </ul>
                 </nav>
             </div> 
-            <%if (session.getAttribute("authenticated_user")!=null){
-                user = (User) session.getAttribute("authenticated_user");
-                int user_id=user.getId();
-                  %>
-        
-            <form action="UploadApartmentController.jsp" method="get" class="upload-form">
+            <div class="errorMessage">
+                <% if(request.getAttribute("message") != null) { %>		
+                    <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("message") %></div>
+                <% } %>
+
+            </div>
+            <form action="UploadController.jsp" method="get" class="upload-form">
                 <br></br>
                 <div class="apart-name">    
                     <input type="text" name="name" id="name" required placeholder="Apartment name" />
@@ -75,23 +66,26 @@
                 <div class="features">
                     <label for="features">Features</label><br>
                     <textarea name="features" id="features" required ></textarea> <br><br>
-                </div>           
-
+                </div>  
                 <div class="reason">
                     <label for="reason">Available for:</label>
                     <input type="radio" name="reason1" value="rent"> Rent
                     <input type="radio" name="reason2" value="swap"> Swap<br><br>
-                </div>    
-             
-            
+                </div> 
+                <div class="photos">
+                    <input type="file" name="fileInput" id="fileInput" multiple>
+                    <!-- Use an array of hidden inputs to store the URLs -->
+                    <input type="hidden" name="imageUrl[]" class="imageUrl">
+                    <input type="hidden" name="imageUrl[]" class="imageUrl">
+                    <!-- Add more hidden inputs as needed -->
+                </div> 
                 <div class="button-new">
                     <button>Upload</button>
                 </div>
-                    
-           
+                
             </form>
         </div>  
-
+        
         <div class="footer">
             <p>&copy; 2023 Your Website Name. All rights reserved.</p>
             <div class="social-icons">
@@ -102,10 +96,38 @@
             </div>
         </div>
         </div>
-        <% }else if (session.getAttribute("authenticated_user")==null){ %>
-            
-            <jsp:forward page="Login.jsp" />
-            <% } %>
-        
+        <script>
+        const fileInput = document.getElementById("fileInput");
+
+        fileInput.addEventListener("change", e => {
+            const hiddenInputs = document.querySelectorAll('.imageUrl');
+            const fileUrls = [];
+
+            for (const file of fileInput.files) {
+                const reader = new FileReader();
+                reader.addEventListener("load", () => {
+                    const imageUrl = reader.result;
+                    fileUrls.push(imageUrl);
+
+                    // Update the corresponding hidden input value
+                    hiddenInputs[fileUrls.length - 1].value = imageUrl;
+
+                    // Check if all files are loaded
+                    if (fileUrls.length === fileInput.files.length) {
+                        console.log(fileUrls);
+                    }
+                });
+
+                reader.readAsDataURL(file);
+            }
+        });
+            function uploadFormSubmit() {
+                // Validate form data if needed
+                // Submit the second form when the button is clicked
+                document.getElementById("imageForm").submit();
+            }
+        </script>
     </body>
 </html>
+
+

@@ -25,7 +25,7 @@
     <div class="wrapper">
         <div class="content">
             <div id="abc">
-                <nav style="height: 100px;">
+                <nav>
                     <ul>
                         <li><a href="Homepage.jsp">Home</a></li>
                         <li><a href="profile.jsp">Notifications</a></li>
@@ -64,6 +64,7 @@
                     <h1> Welcome <%=name%></h1>
                     <h3>My Notifications:</h3>
                     <%
+                            List<SwapCon> swaplist=obj.getSwap(user.getId());
                             List<String> notifications1 = obj.find_notification1(user.getId());
                             List<String> notifications2 = obj.find_notification2(user.getId());
 
@@ -73,6 +74,16 @@
                                     You have a swap offer for your apartment <%= notifications1.get(i) %>
                                     with the apartment <%= notifications2.get(i) %>
                                 </h4>
+                                <%session.setAttribute("swap2", swaplist.get(i));
+                                Apartment apartment1=obj.findApart(swaplist.get(i).getApartmentId());
+                                session.setAttribute("swap_apartment",apartment1);  
+                                Apartment apartment2=obj.findApart(swaplist.get(i).getApartmentId1());
+                                session.setAttribute("swap_apartment1",apartment2); 
+                                session.setAttribute("button1","See More"); 
+                                 %>
+                                <a href="ApartmentDetails_sid.jsp">
+                                    <button type="submit">See Apartment</button>
+                                </a>
                         <%
                             }
                         %>

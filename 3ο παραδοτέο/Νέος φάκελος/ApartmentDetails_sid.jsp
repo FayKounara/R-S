@@ -3,16 +3,16 @@
 <%@ page import="java.util.ArrayList" %>
 
 <%
-String apartmentId = request.getParameter("apartmentId");
 Apartment apart=(Apartment)session.getAttribute("swap_apartment");
-String name = request.getParameter("name");
-String features = request.getParameter("features");
-String capacity = request.getParameter("capacity");
-String price = request.getParameter("price");
-String from = request.getParameter("from");
-String until = request.getParameter("until");
-String address = request.getParameter("address");
-String city = request.getParameter("city");
+String checkin= (String)session.getAttribute("checkin");
+String checkout= (String)session.getAttribute("checkout");
+SwapCon sw= (SwapCon)session.getAttribute("swap2");
+if (sw!=null) {
+    checkin=sw.getCheckin();
+    checkout=sw.getCheckout();
+}
+
+
 %>
 
 
@@ -38,14 +38,7 @@ String city = request.getParameter("city");
                 <li><a href="Homepage.jsp">Home</a></li>
                 <li><a href="profile.jsp">Notifications</a></li>
                 <li><a href="Upload.jsp">Upload</a></li>
-                <%if (session.getAttribute("authenticated_user")==null){
-                    session.setAttribute("id",apartmentId);
-                    session.setAttribute("name",name);
-                    session.setAttribute("features",features);
-                    session.setAttribute("capacity",capacity);
-                    session.setAttribute("address",address);
-                    session.setAttribute("city",city);
-                    %>
+                <%if (session.getAttribute("authenticated_user")==null){%>
                     <li><a href="Login.jsp">Login/Sign-up</a></li>
                 <%}else{
                     User usernav = (User) session.getAttribute("authenticated_user");
@@ -57,60 +50,22 @@ String city = request.getParameter("city");
             </ul>
         </nav>
     </div>
-   
-
+  
       <div class="Apartment-details">
         <div class="Details-container">
           <div class="Apartment-name">
-            <%if(name!=null){%>
-            <p class="Name"><%=name%></p>
-            <%}else{%>
-              <p class="Name"><%=(String)session.getAttribute("name")%></p>
-            <%
-            }
-            %>
+            <p class="Name"><%=apart.getName()%></p>
           </div>
           <ul class="Details-list">
             <div class="Code">
-              <%if(apartmentId!=null){%>
-              <p><strong>Code:</strong> <span><%=apartmentId%></span></p>
-              <%}else{%>
-                <p><strong>Code:</strong> <span><%=(String)session.getAttribute("id")%></span></p>
-                <%
-              }
-              %>
+              <p><strong>Code:</strong> <span><%=apart.getApartmentId()%></span></p>
             </div>
-            <%if(city!=null){%>
-            <li><strong>City:</strong> <span><%=city%></span></li>
-            <%}else{%>
-              <li><strong>City:</strong> <span><%=(String)session.getAttribute("city")%></span></li>
-            <%
-            }
-            %>
-            <%if(address!=null){%>
-            <li><strong>Address:</strong> <span><%=address%></span></li>
-            <%}else{%>
-              <li><strong>Address:</strong> <span><%=(String)session.getAttribute("address")%></span></li>
-              <%
-            }
-            %>
-            <%if(features!=null){%>
-            <li><strong>Features:</strong> <span><%=features%></span></li>
-            <%}else{%>
-              <li><strong>Features:</strong> <span><%=(String)session.getAttribute("features")%></span></li>
-              <%
-            }
-            %>
-            <%if(capacity!=null){%>
-            <li><strong>Guest capacity:</strong> <span><%=capacity%></span></li>
-            <%}else{%>
-              <li><strong>Guest capacity:</strong> <span><%=(String)session.getAttribute("capacity")%></span></li>
-              <%
-            }
-            %>
-
-            <li><strong>Checkin:</strong> <span><%=(String)session.getAttribute("checkin")%></span></li>
-            <li><strong>Checkout:</strong> <span><%=(String)session.getAttribute("checkout")%></span></li>
+            <li><strong>City:</strong> <span><%=apart.getCity()%></span></li>
+            <li><strong>Address:</strong> <span><%=apart.getAddress()%></span></li>
+            <li><strong>Features:</strong> <span><%=apart.getFeatures()%></span></li>
+            <li><strong>Guest capacity:</strong> <span><%=apart.getCapacity()%></span></li>
+            <li><strong>Checkin:</strong> <span><%=checkin%></span></li>
+            <li><strong>Checkout:</strong> <span><%=checkout%></span></li>
           </ul>
         </div>
       </div>
@@ -130,6 +85,15 @@ String city = request.getParameter("city");
         </a>
         
       </div>
+      <%
+    }   else if (session.getAttribute("button1")=="See More"){
+      %>  
+      <form action="SwapController.jsp" method="post">
+      <div>
+          <button type="submit" class="reservation_button" name="buttonrs"  value="ACCEPT">Accept</button>
+        
+      </div>
+    </form>
       <%
     }
     int apart2 = apart.getApartmentId();
@@ -199,10 +163,10 @@ String city = request.getParameter("city");
           <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
   </div>
-  <%  if (from!=null && until!=null) {
-    session.setAttribute("check_in", from);
-    session.setAttribute("check_out", until);
-    session.setAttribute("apartment_id", apartmentId);
+  <%  if (checkin!=null && checkout!=null) {
+    session.setAttribute("check_in", checkin);
+    session.setAttribute("check_out", checkout);
+    session.setAttribute("apartment_id", apart.getApartmentId());
     
   }  
   %>
