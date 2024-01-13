@@ -1,0 +1,314 @@
+body {
+  /*background-image: url("i5.png");*/ 
+  font-family:Verdana;
+}
+/* visited link */
+a:visited {  
+  color: #FFFFFF; font-size: 3
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(255, 0, 128); 
+  font-size: 1.1em;
+}
+
+nav{
+  width: 100%;
+  height: 50px;
+  background-color: rgba(167,154,147,255);
+  line-height: 50px;/* to bring our links to the centre.*/
+}
+
+nav ul{
+  float: right;
+  margin-right: 30px;/* to bring our links to the right.*/
+}
+nav ul li{
+  list-style-type: none;
+  display: inline-block; /* it makes our horizontal.*/
+  transition: 0.7s all;
+}
+nav ul li:hover{
+  background-color:rgb(255, 255, 255);
+}
+nav ul li a{
+  text-decoration: none;
+  color: #ffffff;
+  padding: 30px;
+}
+
+.buttons{
+  width: 100%;
+  position: absolute;
+  top: 65%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.buttons a {
+  text-decoration: none;
+}
+
+button{
+  color: #FFFFFF;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color,border-color,color,box-shadow,filter;
+  transition-duration: .3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 14px 18px;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 2px #ffffff;
+  background-color:  rgb(255, 0, 128);
+  height: 48px;
+}
+
+button:hover{
+  color: rgb(255, 0, 128);
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px  rgb(255, 0, 128);
+}
+
+.content {
+  flex: 1; /* Allows the content to grow and push the footer to the bottom */   
+}
+.footer {
+  background-color: rgba(167,154,147,255);
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .social-icons {
+  margin-top: 10px;
+}
+.button-new {
+  text-align: center;
+  margin: right -50px;;
+}
+.footer .social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none
+}
+
+/*******************************************************************************************************************************************/
+
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+.profile {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fffff0;
+}
+
+aside {
+  
+  position: relative;
+  display: block;
+  height: 66vh;
+  margin-top: 10vh;
+  overflow-y: auto;
+  overflow-y: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 5em;
+  box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+  -webkit-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+  -moz-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+  -o-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+  -webkit-animation: shadow 1s linear forwards;
+  -moz-animation: shadow 1s linear forwards;
+  animation: shadow 1s linear forwards;
+  -webkit-animation-delay: .5s;
+  -moz-animation-delay: .5s;
+  animation-delay: .5s;
+}
+
+@-moz-keyframes shadow {
+  from {
+    box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    -webkit-box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    -moz-box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    -o-box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    max-width: 0em;
+  }
+  to {
+    box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    -webkit-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    -moz-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    -o-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    max-width: 30em;
+  }
+}
+
+@keyframes shadow {
+  from {
+    box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    -webkit-box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    -moz-box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    -o-box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    max-width: 0em;
+  }
+  to {
+    box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    -webkit-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    -moz-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    -o-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    max-width: 30em;
+  }
+}
+
+@-webkit-keyframes shadow {
+  from {
+    box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    -webkit-box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    -moz-box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    -o-box-shadow: 0 0 6em -6em #000000, 0 0 6em -6em #000000;
+    max-width: 0em;
+  }
+  to {
+    box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    -webkit-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    -moz-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    -o-box-shadow: -4em 0 6em -6em #000000, 4em 0 6em -6em #000000;
+    max-width: 30em;
+  }
+}
+
+header img {
+  width: 10em;
+  opacity: 0;
+  border-radius: 50%;
+  box-shadow: .25em .25em .75em 0 #999;
+  -webkit-box-shadow: .25em .25em .75em 0 #999;
+  -moz-box-shadow: .25em .25em .75em 0 #999;
+  -o-box-shadow: .25em .25em .75em 0 #999;
+  -webkit-animation: circle .5s linear forwards;
+  -moz-animation: circle .5s linear forwards;
+  animation: circle .5s linear forwards;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -kthtml-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+@-webkit-keyframes circle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@-moz-keyframes circle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes circle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+header img:hover {
+  box-shadow: -.25em .25em .75em 0 #999;
+  -webkit-box-shadow: 0em 0em 1em 0 #999;
+  -moz-box-shadow: -.25em .25em .75em 0 #999;
+  -o-box-shadow: -.25em .25em .75em 0 #999;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -kthtml-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+header {
+  font-family:Verdana;
+  text-transform: uppercase;
+}
+
+
+.profile-bio {
+  font-family:Verdana;
+  margin-top: 2em;
+}
+
+
+header h1,
+header h2{
+  opacity: 0;
+  -webkit-animation: fade 1s linear forwards;
+  -moz-animation: fade 1s linear forwards;
+  animation: fade 1s linear forwards;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@-moz-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
