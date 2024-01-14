@@ -1,0 +1,1026 @@
+body {
+    /*background-image: url("i5.png");*/ 
+    font-family:Verdana;
+}
+/* visited link */
+a:visited {  
+    color: #FFFFFF; font-size: 3
+}
+
+  /* mouse over link */
+a:hover {
+    color: rgb(255, 0, 128); 
+    font-size: 1.1em;
+}
+
+nav{
+    width: 100%;
+    height: 800px;
+    background-color: rgba(167,154,147,255);
+    line-height: 50px;/* to bring our links to the centre.*/
+}
+
+nav ul{
+    float: right;
+    margin-right: 30px;/* to bring our links to the right.*/
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block; /* it makes our horizontal.*/
+    transition: 0.7s all;
+}
+nav ul li:hover{
+    background-color:rgb(255, 255, 255);
+}
+nav ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 30px;
+}
+
+.buttons{
+    width: 100%;
+    position: absolute;
+    top: 65%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+button{
+    color: #FFFFFF;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    background-color:  rgb(255, 0, 128);
+    height: 48px;
+}
+
+button:hover{
+    color: rgb(255, 0, 128);
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 2px  rgb(255, 0, 128);
+}
+
+.content {
+    flex: 1; /* Allows the content to grow and push the footer to the bottom */   
+}
+.footer {
+    background-color: rgba(167,154,147,255);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+}
+.button-new {
+    text-align: center;
+    margin: right -50px;;
+}
+.footer .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none
+}
+
+/*.................................................................HOMEPAGE*/
+.h1{
+    color: #FFFFFF;
+}
+.homepage-body {
+    background-image: url("i4.jpg");
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.container {
+    position: relative; /* Updated to relative */
+    width: 90%; /* Updated to a percentage value */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-box {
+    margin-bottom: 20px; /*the space underneath before the buttons*/
+}
+
+.search-box input[type="text"],.search-box select,
+.search-box input[type="date"] {
+    
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+table th, table td {
+    padding: 20px;
+    text-align: left;
+}
+
+/* Style for the Check-in date field */
+.custom-date-input {
+    position: relative;
+}
+
+.custom-date-input label {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    background: transparent;
+    padding: 0 5px;
+    color: #ffffff;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.errorMessage-Homepage {
+    margin-top: 24px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.alert1 {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color:  white;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/*..................................................................................................................Search Results*/
+.list-container{
+    margin-top: 50px;
+    display:flex ;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.left-col{
+    flex-basis: 70%;
+}
+.right-col{
+    flex-basis: 25%;
+}
+.left-col h1{
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.house{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+}
+.house-img{
+    flex-basis: 40%;
+}
+.house-info{
+    flex-basis: 58%;
+    color:rgb(255, 0, 128);
+}
+.house-img img{
+    width: 100%;
+    border-radius: 12px;
+}
+.house-info h3{
+    font-weight: 600;
+    color: #333;
+    font-size: 22px;
+    margin: 4px 0;
+}
+.house-price{
+    text-align: right;
+}
+.house-price h4{
+    font-size: 20px;
+}
+.house-price h4 span{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sidebar{
+    border: 1px solid#999;
+    padding: 20px 30px;
+    margin-top: 30px;
+}
+
+.sidebar h2{
+    font-weight: 500;
+}
+
+.sidebar h3{
+    font-weight: 500;
+    margin: 20px 0 10px;
+}
+
+.filter{
+    display: flex;
+    align-items: center;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.filter p{
+    flex: 1;
+}
+
+.filter input{
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.sidebar-link{
+    text-align: right;
+    margin: 20px 0;
+}
+
+.sidebar-link a{
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.pagination img{
+    width: 15px;
+    margin: 10px 20px;
+}
+
+.right-arrow{
+    transform: rotate(180deg);
+}
+
+.pagination span{
+    margin-top: 10px 8px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50% ;
+    cursor: pointer;
+
+}
+/*-------------------------------------------..................................................................----------upload*/
+.upload-body {
+    background-image: url('i4.jpg');  
+    font-family:Verdana;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;   
+}
+.upload-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.upload-form label{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.upload-form input {
+    background-color: rgb(250, 242, 235); 
+    border-radius: 5px;
+    height: 20px;     
+}
+
+.apart-name {  
+    height: 50px;
+}
+
+#name {
+    width: 320px; 
+    height: 35px;
+    border-radius: 5px;
+    text-align: center;
+}
+.city-capacity { 
+    padding: 10px;
+    border-radius: 5px;  
+    margin: 2px;  
+    display: grid;
+    grid-template-columns: auto auto ; 
+    grid-gap: 10px; 
+    width: 350px;
+    height: 35px;
+         
+}
+.city-capacity input{ 
+    width: 180px;
+    height:25px;   
+    text-align: center;   
+}
+.address-price{ 
+    padding: 10px;
+    border-radius: 5px;
+    width: 350px;
+    height: 45px;
+    margin: 2px;  
+    display: grid;
+    grid-template-columns: auto auto; 
+    grid-gap: 10px; 
+}
+.address-price input{ 
+    width: 180px;
+    height:25px; 
+    text-align: center;
+}
+
+.availability{
+    padding: 10px;
+    border-radius: 5px;
+    width: 350px;
+    height: 45px;
+    margin: 2px;
+    display: grid;
+    grid-template-columns: auto auto; /* Two columns */
+    grid-gap: 10px; 
+    
+}
+.availability input {
+    width: 130px;
+    height:25px;
+    text-align: center;
+}
+#features{
+    background-color: rgb(250, 242, 235); 
+    border-radius: 5px;
+    width: 320px;
+    height: 35px;
+    text-align: center;
+    margin: 2px;
+    padding: 5px;
+}
+.form-photo input{
+    text-align: center;
+    width: 330px;
+}
+
+.reason {
+    color: white;
+    font-size: 18px;
+}
+
+.upload-button {
+    color: #FFFFFF;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 120px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 200;   
+    padding: 16px 14px 18px;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    background-color:  rgb(255, 0, 128);
+    height: 48px;
+    width: 100px;
+    width: 100%;
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    margin-right: -60%;
+    transform: translate(-50%, -50%);
+}
+.upload-button button:hover{
+    color: rgb(255, 0, 128);
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 2px  rgb(255, 0, 128);
+}
+.upload-body content {
+    flex: 1; /* Allows the content to grow and push the footer to the bottom */
+    
+}
+/*..................................................................................................................apartment final*/
+
+.Apartment_page {
+  font-family:Verdana;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+  color: #000000;
+    
+}
+
+/* Up for Swap transparent image*/
+.UpforSwap{
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  text-align: left;
+  color: #FFFFFF; 
+  left: 52%; /* Center the heading horizontally */
+  transform: translateX(-50%); /* Center the heading horizontally */
+}
+
+.UpforSwap img {
+  width: 20%; /* This will make the image half of its original size */
+}
+
+  /* List of apartment details */
+.Details-container {
+  max-width: 400px; /* Adjust as needed */
+  width: 100%;
+  margin: 0 auto;
+}
+  
+.Apartment-details {
+  background-color: rgba(241, 241, 241, 0.8);
+  padding: 20px;
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.54);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+.Details-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  max-width: 600px; /* Adjust as needed */
+}
+  
+.Details-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+  
+.Details-list li strong {
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+}
+
+.Details-list li span {
+  display: inline-block;
+  text-align: left;
+  flex-grow: 1;
+  width: 200px;
+}
+
+/* Button for reservation */
+.reservation_button {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    text-align: right;
+    color: #FFFFFF;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.5vw; /* Use viewport width for responsive font size */
+    line-height: 1;
+    border-radius: 50vw; /* Use viewport width for responsive border-radius */
+    transition-property: background-color, border-color, color, box-shadow, filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 0.1em;
+    min-width: 12vw; /* Use viewport width for responsive minimum width */
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 2vw 1.8vw 2.2vw; /* Use viewport width for responsive padding */
+    color: #ffffff;
+    box-shadow: inset 0 0 0 0.3vw #ffffff; /* Use viewport width for responsive box-shadow */
+    background-color: rgb(255, 0, 128);
+    height: 6vw; /* Use viewport width for responsive height */
+  }
+  
+  .reservation_button:hover {
+    color: rgb(255, 0, 128);
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 0.3vw rgb(255, 0, 128); /* Use viewport width for responsive box-shadow */
+  }
+  
+
+.image-container {
+  display: flex;
+  background-color: #fff; /* Set background color to white */
+  padding: 20px; /* Add some padding for spacing */
+  justify-content: center; /* Center the images horizontally */
+}
+
+  
+.image-wrapper {
+  margin: 0 8px; /* Add margin to create space between the images */
+  transition: transform 0.3s; 
+}
+  
+.image-container img {
+  width: 100%; /* Make the images fill the container */
+  height: auto; /* This maintains the aspect ratio of the images */
+}
+
+.image-container img:hover {
+  transform: scale(1.1); /* Zoom in by 10% on hover */
+}
+
+
+.Apartment-name {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Add some space between the name and details */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Name {
+  font-weight: bold; /* Make the text bold */
+  font-size: 18px; /* Increase the font size to 18 pixels */
+}
+
+.Code {
+  text-align: right;
+  margin-top: -20px; /* Adjust this value to move the box higher */
+}
+  
+.Code p {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Ensures the box doesn't take full width */
+}
+
+.see-more-button {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px; /* Adjust the margin as needed */
+  margin-bottom: 10px; /* Add margin to the bottom to separate it from the extra images */
+}
+
+.see-more-button button {
+/* Use the same CSS as the reservation button */
+  color: #FFFFFF;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color,border-color,color,box-shadow,filter;
+  transition-duration: .3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 14px 18px;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 2px #ffffff;
+  background-color:  rgb(255, 0, 128);
+  height: 48px;
+}
+  
+.see-more-button button:hover {
+  /* Use the same hover effect as the reservation button */
+  color: rgb(255, 0, 128);
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px  rgb(255, 0, 128);
+}
+
+.extra-images {
+  display: none; /* Hide the extra images by default */
+}
+
+
+/*........................................................................................................................ Swap offer css */
+.SwapYourApartmenth1{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 25px;
+}
+
+.SwapYourApartmenth2{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.form-Swap-offer{
+  text-align: center;
+  margin-top: 0.6in;
+}
+
+.SwapYourApartment {
+  background-image: url('i4.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  font-size: 20px;
+  font-family:Verdana;
+}
+
+input {
+  background-color: rgb(208, 208, 218); 
+}
+
+.Submit_button {
+  color: #FFFFFF;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color,border-color,color,box-shadow,filter;
+  transition-duration: .3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 14px 18px;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 2px #ffffff;
+  background-color:  rgb(255, 0, 128);
+  height: 48px;
+}
+
+.Submit_button :hover{
+  color: rgb(255, 0, 128);
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px  rgb(255, 0, 128);
+}
+
+textarea{
+  background-color: rgb(208, 208, 218); 
+}
+
+/* Style the checkbox container */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Add this line to center the content horizontally */
+  text-align: left;
+}
+  
+  /* Style the checkbox itself */
+.checkbox-container input[type="checkbox"] {
+  width: 18px; /* Adjust the width */
+  height: 18px; /* Adjust the height */
+}
+  
+  /* Style the label */
+.checkbox-container label {
+  font-size: 20px;
+}
+
+/*..................................................................................................................payment*/
+
+
+.label-input-pair {
+    display: flex;
+    align-items:center;
+    margin-bottom:7px;
+
+}
+
+.inline { /* Adjust the width as needed */
+    margin-right: 7px; /* Add some spacing between labels */
+}
+
+
+input[type="text"] {
+    width: 75%;
+    margin: 15px 0px;
+}
+
+
+.info p {
+    font-size: 16px;
+    margin: 10px 0;
+    text-align: left;
+}
+.info h3 {
+    font-size: 20px;
+    margin: 0;
+    text-align: left;
+}
+u,h4 {
+    text-align: left;
+}
+#secret-code {
+    width: 77%; /* Adjust the width as needed to make it larger */
+}
+#card1{
+    width: 77%;
+    margin: 10px 0;
+}
+/* CSS in your .css file */
+.c-input-phone-country {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap as needed */
+    
+}
+
+.c-input-phone-country label {
+    
+    text-align: left;
+    
+}
+
+.c-input-phone-country input {
+    flex: 1; /* Take up available space */
+    text-align: left;
+   
+}
+input#phone {
+    width: 150px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    /* Add other styles for the input element */
+}
+
+/*----------------------------------------------------------------------------------------------------------Login----*/
+
+.login-body {
+    background-color: rgb(193, 177, 146);
+}
+.login-body h1 {
+    color: WHITE;
+    position: absolute;
+    top: 45%;
+    left: 28%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    font-family: Verdana;
+    
+}
+
+.login-body h2 {
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    font-family: Verdana;
+    
+}
+.login-wrong {
+    color: white;
+    position: absolute;
+    top: 33%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    font-family: Verdana;
+}
+        
+.login-values {           
+    position: absolute;
+    top: 45%;
+    left: 85%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    
+}
+.login-form label {
+    
+    font-weight: bold;
+    font-size: 18px;
+}
+.username input{
+    background-color: white;
+    width: 250px;
+    height: 20px;
+    border-radius: 5px;
+}
+.password input{
+    background-color: white;
+    width: 250px;
+    height: 20px;
+    border-radius: 5px;
+}
+.login-button button {
+    color: #FFFFFF;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 200;   
+    padding: 16px 14px 18px;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    background-color:  rgb(255, 0, 128);
+    height: 48px;
+    width: 100px;
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.login-button button:hover{
+    color: rgb(255, 0, 128);
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 2px  rgb(255, 0, 128);
+}
+.cont {
+    background-image: url('login.png');  
+    border: 1px solid #ccc;
+    padding: 200px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.login-body img{
+    width: 120px;
+    height: 60px;
+    position: absolute;
+    top: 30%;
+    left: 28%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.login-body a{
+    color:  rgb(193, 177, 146);
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}  
+/*--------------------------------------------------------------------------------------------------Sign Up-----------*/
+.sign-button button {
+    color: #FFFFFF;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 200;   
+    padding: 16px 14px 18px;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    background-color:  rgb(255, 0, 128);
+    height: 48px;
+    width: 100px;
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.sign-button button:hover{
+    color: rgb(255, 0, 128);
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 2px  rgb(255, 0, 128);
+}
+.signup-link a{
+    color:  rgb(193, 177, 146);
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.sign-phone  input {
+    background-color: white;
+    width: 250px;
+    height: 20px;
+    border-radius: 5px; 
+}
+#sign-name {
+    background-color: white;
+    width: 250px;
+    height: 20px;
+    border-radius: 5px; 
+}
+#sign-h2 {
+    color: white;
+    position: absolute;
+    top: 15%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    font-family: Verdana;
+    
+}
+.signup-wrong {
+    color: white;
+    position: absolute;
+    top: 24%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    font-family: Verdana;
+}
